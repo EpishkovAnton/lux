@@ -1,0 +1,356 @@
+//<МИКСИНЫ>===============================================================================================
+@import "mixins.scss";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontfamily: "";
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minwidth: 320px;
+$mw: 1170;
+$md1: $mw+12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null.scss";
+
+body {
+	color: #000;
+	font-size: 14px;
+
+	&.lock {
+		overflow: hidden;
+	}
+}
+
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+
+	&.loaded {}
+}
+
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container {
+	max-width: $mw + px;
+	margin: 0 auto;
+	width: 100%;
+
+	@media (max-width: $md1+px) {
+		max-width: 970px;
+	}
+
+	@media (max-width: $md2+px) {
+		max-width: 750px;
+	}
+
+	@media (max-width: $md3+px) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms.scss";
+@import "ui.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "../../js/fancybox/jquery.fancybox.scss";
+//@import "datepicker.scss";
+//@import "fontawesome.scss";
+//@import "popover.min.scss";
+//@import "baguetteBox.scss";
+//@import "pagging.scss";
+//@import "icons.scss";
+@import "popup.scss";
+@import "header.scss";
+@import "footer.scss";
+@import "home.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+.page {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	@include flexbox();
+	flex-direction: column;
+}
+
+//====================================================================================================
+.header {
+
+	&__row {
+		@include flexbox();
+		flex-wrap: wrap;
+	}
+
+	&__1 {
+		@include flexbox();
+		flex-direction: column;
+
+	}
+
+	&__logo {
+		margin: 22px 0px 22px 0px;
+	}
+
+	&__catalog {
+		@include flexbox();
+		align-items: center;
+		width: 278px;
+		height: 53px;
+		background-color: #e78216;
+		color: #ffffff;
+		font-family: Roboto;
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 40px;
+		text-transform: uppercase;
+		padding: 0px 185px 0px 0px;
+
+		span {
+			margin: 0px 150px 0px 15px;
+		}
+	}
+
+	&__2 {}
+
+	&__contacts {
+		@include flexbox();
+
+	}
+
+
+	&__3 {
+		@include flexbox();
+		flex-direction: column;
+		margin-top: 17px;
+		align-items: flex-end;
+		margin-left: 40px;
+	}
+
+	&__social {
+
+		img {
+			margin: 0px 0px 23px 16px;
+		}
+	}
+
+	&__enter {
+		a {
+			color: #000000;
+			font-family: Roboto;
+			font-size: 15px;
+			font-weight: 400;
+			padding: 0px 0px 0px 38px;
+			line-height: 25px;
+			display: inline-block;
+
+
+		}
+	}
+
+	&__find {
+		margin: 23px 0px 0px 0px;
+		position: relative;
+
+
+
+		input {
+			width: 262px;
+			height: 38px;
+			background-color: #f7f7f7;
+			color: #000000;
+			font-family: Roboto;
+			font-size: 15px;
+			font-weight: 400;
+
+		}
+
+		img {
+			display: block;
+			position: absolute;
+			top: 10px;
+			left: 230px;
+		}
+
+	}
+
+	&__reg {
+		background: url(img/icons/REG.png) left no-repeat;
+
+	}
+
+	&__4 {
+		margin: 0px 0px 0px 26px;
+
+	}
+
+	&__by {
+		width: 111px;
+		height: 160px;
+		background-color: #00b5ab;
+		padding: 31px 25px 31px 25px;
+
+
+		span {
+			opacity: 0.6;
+			color: #ffffff;
+			font-family: Roboto;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 18px;
+			padding: 100px 0px 0px 0px;
+
+			&:hover {
+				opacity: 1;
+			}
+
+		}
+
+		img {
+			margin: 0px 0px 30px 0px;
+		}
+
+
+	}
+}
+
+.container {}
+
+.contacts {
+	margin: 23px 0px 40px 30px;
+
+	&__tel {
+		@include flexbox();
+		flex-direction: column;
+		margin: 0px 42px 0px 0px;
+
+		a {
+			color: #010101;
+			font-family: Roboto;
+			font-size: 15px;
+			font-weight: 400;
+			line-height: 22px;
+
+			span {
+				font-family: "Roboto";
+				font-weight: 700;
+				margin-left: 33px;
+			}
+		}
+	}
+
+	&__mail {
+		@include flexbox();
+		flex-direction: column;
+		justify-content: center;
+
+
+		a {
+			text-align: center;
+			color: #000000;
+			font-family: Roboto;
+			font-size: 15px;
+			font-weight: 400;
+			line-height: 22px;
+			padding: 0px 0px 0px 13px;
+		}
+	}
+
+	&__phone {
+		background: url(img/icons/tel_icon.png) left no-repeat;
+
+	}
+
+	&__icon {
+		background: url(img/icons/mail.png) left no-repeat;
+
+	}
+
+	&__call {
+		width: 179px;
+		height: 36px;
+		background-color: #fc9a00;
+		margin: 10px 0px 0px 0px;
+		color: #ffffff;
+		font-family: Roboto;
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 22px;
+	}
+
+	&__menu {}
+}
+
+.menu {
+
+
+	&__icon {}
+
+	&__body {}
+
+	&__list {
+		@include flexbox();
+
+		li {
+			margin: 0px 0px 0px 35px;
+			color: #000000;
+			font-family: Roboto;
+			font-size: 15px;
+			font-weight: 400;
+			text-transform: uppercase;
+		}
+
+	}
+
+	&__link {
+		color: #000000;
+		font-family: Roboto;
+		font-size: 15px;
+		font-weight: 400;
+		text-transform: uppercase;
+
+		&:hover {
+			color: #00b5ab;
+			font-family: "Roboto";
+			font-weight: 400;
+		}
+
+
+
+	}
+}
+
+.icon-menu {}
+
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
