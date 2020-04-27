@@ -154,7 +154,7 @@ body {
 		flex-direction: column;
 		margin-top: 17px;
 		align-items: flex-end;
-		margin-left: 40px;
+		margin-left: 27px;
 	}
 
 	&__social {
@@ -338,11 +338,21 @@ body {
 		font-size: 15px;
 		font-weight: 400;
 		text-transform: uppercase;
+		position: relative;
+
 
 		&:hover {
 			color: #00b5ab;
 			font-family: "Roboto";
 			font-weight: 400;
+		}
+
+		&::after {
+			content: "";
+			width: 1px;
+			height: 16px;
+			background-color: #d0d0d0;
+			position: absolute;
 		}
 
 

@@ -937,7 +937,7 @@ body.ie .ibg img {
 	-webkit-box-align: end;
 	    -ms-flex-align: end;
 	        align-items: flex-end;
-	margin-left: 40px;
+	margin-left: 27px;
 }
 .header__social img {
 	margin: 0px 0px 23px 16px;
@@ -1083,9 +1083,17 @@ body.ie .ibg img {
 	font-size: 15px;
 	font-weight: 400;
 	text-transform: uppercase;
+	position: relative;
 }
 .menu__link:hover {
 	color: #00b5ab;
 	font-family: "Roboto";
 	font-weight: 400;
+}
+.menu__link::after {
+	content: "";
+	width: 1px;
+	height: 16px;
+	background-color: #d0d0d0;
+	position: absolute;
 }
